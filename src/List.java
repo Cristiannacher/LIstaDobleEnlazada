@@ -47,11 +47,14 @@ public class List<T> {
         return firstElement == null;
     }
 
-    private boolean moreThanOneElement
+    private boolean moreThanOneElement(){
+        return !(firstElement == lastElement);
+    }
 
     public void remove(T obj) {
         Element<T> toGetObject = firstElement;
         if (firstElement != null) {
+            if(moreThanOneElement())
             if (firstElement.getObject().equals(obj)) {
                 firstElement = firstElement.getNext();
             } else {
